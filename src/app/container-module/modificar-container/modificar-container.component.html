@@ -1,0 +1,25 @@
+<p>modificar-container works!</p>
+
+<div class="card mb-4 rounded-3 shadow-sm">
+    <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Modificar</h4>
+      </div>
+    <div class="card-body">
+        <div class="mb-3">
+
+            <input type="number" class="form-control" id="codigo" placeholder="Codigo" readonly [(ngModel)]="containerRecibidoModificar.codigo" >
+            <!-- <input type="number" class="form-control" id="codigo" placeholder="Codigo" readonly formControlName='codigo' formControlName='marca' [ > -->
+        </div>
+        <form [formGroup]='containerFormGroup'>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="marca" placeholder="Marca" formControlName='marca' [(ngModel)]="containerRecibidoModificar.marca"> 
+                <small class="invalid" *ngIf="containerFormGroup.controls['marca'].errors?.['required'] && containerFormGroup.controls['marca'].touched">El marca es requerido</small>
+            </div>
+            <div class="mb-3">
+                <input type="number" placeholder="Capacidad" formControlName='capacidad' [(ngModel)]="containerRecibidoModificar.capacidad">
+                <small class="invalid" *ngIf="containerFormGroup.controls['capacidad'].errors?.['required'] && containerFormGroup.controls['capacidad'].touched">El capacidad es requerido</small>
+            </div>
+            <button  [disabled]='!containerFormGroup.valid' type="button" class="w-100 btn btn-lg btn-primary" (click)="modificarContainer()">Modificar</button>
+        </form>
+    </div>
+</div>

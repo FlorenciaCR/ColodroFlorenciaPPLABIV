@@ -1,0 +1,34 @@
+<br>
+<header>
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Listado containers</h1>
+      <!--[listaContainer]="listaContainer(esto es una var de ts)"-->
+      <app-listado-container  (containerSeleccionadoEvento)="recibeEventoContainerSelecc($event)"></app-listado-container>
+    </div>
+</header>
+
+<main>
+    <div class="container pt-5">
+
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    
+          <div class="col">
+            <app-alta-container  (altaContainerEvento)="recibeEventoAltayAgrega($event)"></app-alta-container>
+          </div>
+
+          <div class="col">
+            <app-modificar-container [containerRecibidoModificar]="containerSeleccionadoModificar" (containerModificadoEvent)="limpiarHijos()" ></app-modificar-container>
+          </div>
+
+          <div class="col">
+            <app-eliminar-container [containerRecibidoEliminar]="containerSeleccionadoEliminar" (containerEliminadoEvent)="limpiarHijos()" ></app-eliminar-container>
+          </div>
+    
+    
+          
+          
+        </div>
+    </div>
+
+    
+  </main>

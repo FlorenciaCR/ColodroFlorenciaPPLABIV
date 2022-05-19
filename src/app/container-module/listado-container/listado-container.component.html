@@ -1,0 +1,22 @@
+<p>listado-container works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Capacidad</th>
+        
+        <th scope="col">-</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let container of this.listaContainers">
+      <tr >
+        <!-- <td>{{container.id}}</td> -->
+        <td>{{container.codigo}}</td>
+        <td>{{container.marca}}</td>
+        <td>{{container.capacidad}}</td>
+        
+        <td><button (click)="lanzarEventoContainerSeleccionado(container)">Seleccionar</button></td>
+    </tr>
+    </tbody>
+</table>
