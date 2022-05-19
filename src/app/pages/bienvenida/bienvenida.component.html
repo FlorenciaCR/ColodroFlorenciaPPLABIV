@@ -1,0 +1,11 @@
+<div class="px-4 py-5 my-5 text-center" *ngIf="datosGitHub">
+    <h1 class="display-5 fw-bold">{{this.datosGitHub?.name}}</h1>
+    <div class="col-lg-6 mx-auto">
+      <p>Ubicacion: {{datosGitHub?.location}}</p>
+      <p>Usuario: {{datosGitHub?.login}}</p>
+      <img src="{{this.datosGitHub?.avatar_url}}" alt="" width="40px" height="40px">
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <!-- <button type="button" class="btn btn-info px-4 gap-3" style="margin-top: 20px;" (click)="irALogin()">Loguearse</button> -->
+      </div>
+    </div>
+  </div>

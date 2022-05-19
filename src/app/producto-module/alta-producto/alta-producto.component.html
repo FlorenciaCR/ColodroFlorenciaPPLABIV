@@ -1,0 +1,86 @@
+<div class="container">
+    <main>
+      <div class="py-5 text-center">
+  
+      </div>
+  
+      <div class="row g-4">
+        <!--Listado de paises-->
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <app-listado-paises (paisSeleccionadoEvento)="padreRecibeEventoPais($event)"></app-listado-paises>
+        </div>
+        <!-- Alta -->
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Alta producto</h4>
+          <form [formGroup]="forma"  (ngSubmit)="crearProductoyAgregarAColeccion()">
+            
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">Codigo</label>
+
+                <input type="text" class="form-control" id="floatingInput" placeholder="Codigo" formControlName="codigo">
+
+                <small class="invalid" *ngIf="forma.controls['codigo'].errors?.['required']&& forma.controls['codigo'].touched" style="color:red ;">
+                  El codigo es requerido
+                </small>
+
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Descripcion</label>
+                <input type="text" class="form-control" id="floatingInput" placeholder="descripcion" formControlName="descripcion">
+                <small class="invalid" *ngIf="forma.controls['descripcion'].errors?.['required']&& forma.controls['descripcion'].touched" style="color:red ;">
+                  El descripcion es requerido
+                </small>
+              </div>
+  
+              <div class="col-12">
+                <label for="username" class="form-label">Precio</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text">$</span>
+                  <input type="text" class="form-control" id="floatingInput" placeholder="descripcion" formControlName="precio">
+                  <small class="invalid" *ngIf="forma.controls['precio'].errors?.['required']&& forma.controls['precio'].touched" style="color:red ;">
+                    El precio es requerido
+                  </small>
+                  <small class="invalid" *ngIf="forma.controls['precio'].errors?.['min']&& forma.controls['precio'].touched" style="color:red ;">
+                    No puede ser 0
+                  </small>
+                </div>
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Stock <span class="text-muted">(Optional)</span></label>
+                <input type="text" class="form-control" id="floatingInput" placeholder="descripcion" formControlName="stock">
+                <small class="invalid" *ngIf="forma.controls['stock'].errors?.['required']&& forma.controls['stock'].touched" style="color:red ;">
+                  El stock es requerido
+                </small>
+                <small class="invalid" *ngIf="forma.controls['stock'].errors?.['min']&& forma.controls['stock'].touched" style="color:red ;">
+                  No puede ser 0
+                </small>
+              </div>
+  
+              <div class="col-12">
+                <label for="address" class="form-label">Pais</label>
+                <input type="text" class="form-control" id="floatingInput" placeholder="descripcion" [value]="miProducto.paisDeOrigen.name?.common" >
+              </div>
+            </div>
+
+           
+          <hr class="my-4">  
+          <div class="my-3">
+            <label for="username" class="form-label">Comestible</label>
+            <div class="form-check">
+              <input id="comestible" name="comestible" type="radio" class="form-check-input"  formControlName="comestible" value="true">
+              <label class="form-check-label" for="comestible">Si</label>
+            </div>     
+          </div>
+          
+
+            <hr class="my-4">  
+            <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="forma.invalid">Agregar producto</button>
+          </form>
+        </div>
+        
+      </div>
+    </main>
+  

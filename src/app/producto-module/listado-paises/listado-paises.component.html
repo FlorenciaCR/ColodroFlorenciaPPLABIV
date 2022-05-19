@@ -1,0 +1,20 @@
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-primary">Listado paises</span>
+    <span class="badge bg-primary rounded-pill">3</span>
+  </h4>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre:</th>
+        <th scope="col">Bandera</th>
+        <th scope="col">-</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let pais of listaPaisesapi ">
+      <tr>
+        <td>{{pais?.name.common}}</td>
+        <td><img [src]="pais.flags.png" alt="" width="70px" height="70px"></td>
+        <td> <button (click)="lanzarEventoPaisSeleccionado(pais)"> Seleccionar </button> </td>
+      </tr>
+    </tbody>
+</table>
