@@ -7,13 +7,17 @@ import { ListadoPaisesComponent } from './listado-paises/listado-paises.componen
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
+import { InformacionPaisComponent } from './informacion-pais/informacion-pais.component';
+import { ListadoProductoComponent } from './listado-producto/listado-producto.component';
+import { InformacionProductoComponent } from './informacion-producto/informacion-producto.component';
 
 
 @NgModule({
   declarations: [
-    AltaProductoComponent,
-    ListadoPaisesComponent,
-    DetalleProductoComponent
+    DetalleProductoComponent,
+    ListadoProductoComponent,
+    InformacionProductoComponent,
+    InformacionPaisComponent
   ],
   imports: [
     CommonModule,

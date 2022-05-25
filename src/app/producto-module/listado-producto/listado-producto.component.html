@@ -1,0 +1,29 @@
+
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-primary">Listado producto</span>
+    <span class="badge bg-primary rounded-pill">{{listaProductosColeccion.length}}</span>
+</h4>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Codigo:</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Pais</th>
+        <th scope="col">Comestible</th>
+        <th scope="col">Seleccionar</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let producto of listaProductosColeccion">
+      <tr>
+        <td>{{producto.codigo}}</td>
+        <td>{{producto.descripcion}}</td>
+        <td>{{producto.precio}}</td>
+        <td>{{producto.stock}}</td>
+        <td>{{producto.paisDeOrigen?.name?.common}}</td>
+        <td>{{producto.comestible}}</td>
+        <td> <button (click)="lanzarEventoProductoSeleccionado(producto)">Seleccionar</button> </td>
+      </tr>
+    </tbody>
+</table>

@@ -1,0 +1,19 @@
+<h2 style="color:black;">Detalle pais</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Foto</th>
+      <th scope="col">Region</th>
+      <th scope="col">Capital</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="paisSeleccionadoMostrar && paisSeleccionadoMostrar.paisDeOrigen">
+    <tr style="color:black;">
+      <td>{{paisSeleccionadoMostrar?.paisDeOrigen?.name?.common || '-'}}</td>
+      <img *ngIf="paisSeleccionadoMostrar.paisDeOrigen.flags" [src]="paisSeleccionadoMostrar?.paisDeOrigen?.flags?.png" height="40px" width="50px"> 
+      <td>{{paisSeleccionadoMostrar?.paisDeOrigen?.region || '-'}}</td>
+      <td>{{paisSeleccionadoMostrar?.paisDeOrigen?.capital || '-'}}</td>
+    </tr>
+  </tbody>
+</table>

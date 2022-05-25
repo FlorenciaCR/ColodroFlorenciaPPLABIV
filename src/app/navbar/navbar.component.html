@@ -14,6 +14,13 @@
             <a class="nav-link active" aria-current="page" href="#" [routerLink]="['producto/alta']">Parte 1: alta producto</a>
           </li>
           
+          <li class="nav-item" *ngIf="firebase.estaLogueado">
+            <a class="nav-link active" aria-current="page" href="#"  [routerLink]="['producto/detalle']">Parte 2: producto detalle</a>
+          </li>
+
+          <li class="nav-item" *ngIf="firebase.esAdmin">
+            <a class="nav-link active" aria-current="page" href="#" [routerLink]="['container/abmcontainer']">Parte 3: ABM </a>
+          </li>
      
         </ul>
         <!--Decir quien esta logueado-->

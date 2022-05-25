@@ -1,1 +1,28 @@
-<p>detalle-producto works!</p>
+<div class="container py-4">  
+    <!--LISTADO-->
+    <br>
+   <app-listado-producto (productoSeleccionadoEvento)="padreRecibeEventoProducto($event)"></app-listado-producto>
+
+   <!--Componentes informacion producto y pais-->
+   <div class="row align-items-md-stretch">
+     <!--Informacion producto-->
+     <div class="col-md-6">
+       <div class="h-100 p-5 text-white rounded-3">
+         
+       <app-informacion-producto [productoSeleccionadoMostrar]="productoSeleccRecibido"></app-informacion-producto>
+     </div>
+     </div>
+
+     <div class="col-md-6">
+       <div class="h-100 p-5 bg-light border rounded-3">
+         <!--[paisSeleccionadoMostrar]="paisSeleccRecibido"-->
+         <app-informacion-pais [paisSeleccionadoMostrar]="productoSeleccRecibido"></app-informacion-pais>
+
+       </div>
+     </div>
+   </div>
+
+   <footer class="pt-3 mt-4 text-muted border-top">
+     &copy; 2021
+   </footer>
+ </div>

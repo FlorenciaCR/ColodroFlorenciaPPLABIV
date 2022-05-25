@@ -10,13 +10,17 @@ import { BienvenidaComponent } from './pages/bienvenida/bienvenida.component';
 import { environment } from 'src/environments/environment.prod';
 import { AngularFireModule } from '@angular/fire/compat';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AltaProductoComponent } from './producto-module/alta-producto/alta-producto.component';
+import { ListadoPaisesComponent } from './producto-module/listado-paises/listado-paises.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     BienvenidaComponent,
-    NavbarComponent
+    LoginComponent,
+    AltaProductoComponent,
+    NavbarComponent,
+    ListadoPaisesComponent,
   ],
   imports: [
     BrowserModule,

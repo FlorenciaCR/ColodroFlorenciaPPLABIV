@@ -1,0 +1,23 @@
+<h2 style="color:black;">Detalle producto</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Codigo:</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Pais</th>
+      <th scope="col">Comestible</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="productoSeleccionadoMostrar!=null">
+    <tr style="color:black;">
+      <td>{{productoSeleccionadoMostrar?.codigo || '-'}}</td>
+      <td>{{productoSeleccionadoMostrar?.descripcion || '-'}}</td>
+      <td>{{productoSeleccionadoMostrar?.precio || '-'}}</td>
+      <td>{{productoSeleccionadoMostrar?.stock || '-'}}</td>
+      <td>{{productoSeleccionadoMostrar?.paisDeOrigen?.name?.common || '-'}}</td>
+      <td>{{productoSeleccionadoMostrar?.comestible || '-'}}</td>
+    </tr>
+  </tbody>
+</table>
